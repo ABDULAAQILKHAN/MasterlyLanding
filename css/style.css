@@ -1,5 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
 
+@-webkit-keyframes bg-scrolling-reverse {
+    100% {
+      background-position: 50px 50px;
+    }
+  }
+  @-moz-keyframes bg-scrolling-reverse {
+    100% {
+      background-position: 50px 50px;
+    }
+  }
+  @-o-keyframes bg-scrolling-reverse {
+    100% {
+      background-position: 50px 50px;
+    }
+  }
+  @keyframes bg-scrolling-reverse {
+    100% {
+      background-position: 50px 50px;
+    }
+  }
+  @-webkit-keyframes bg-scrolling {
+    0% {
+      background-position: 50px 50px;
+    }
+  }
+  @-moz-keyframes bg-scrolling {
+    0% {
+      background-position: 50px 50px;
+    }
+  }
+  @-o-keyframes bg-scrolling {
+    0% {
+      background-position: 50px 50px;
+    }
+  }
+  @keyframes bg-scrolling {
+    0% {
+      background-position: 50px 50px;
+    }
+  }
 @font-face {
     font-family: 'MyFont';
     src: local('MyFont'), url(./PPNeueMachina-InktrapVariable.woff) format('woff');
@@ -11,6 +51,22 @@
 }
 body{
     font-family: "MyFont";
+    font: 400 16px/1.5 exo, ubuntu, "segoe ui", helvetica, arial, sans-serif;
+    text-align: center;
+    /* img size is 50x50 */
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
+    -webkit-animation: bg-scrolling-reverse 0.92s infinite;
+    /* Safari 4+ */
+    -moz-animation: bg-scrolling-reverse 0.92s infinite;
+    /* Fx 5+ */
+    -o-animation: bg-scrolling-reverse 0.92s infinite;
+    /* Opera 12+ */
+    animation: bg-scrolling-reverse 0.92s infinite;
+    /* IE 10+ */
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+    -o-animation-timing-function: linear;
+    animation-timing-function: linear;
 }
 ::selection{
     background-color: #FF5500;
@@ -18,7 +74,7 @@ body{
   }
 .container {
     padding: 10px 10%;
-    background-color: #d2e0f4;
+    background-color: transparent;
     width: 100%;
     height: 100vh;
     overflow: hidden;
@@ -33,7 +89,8 @@ nav {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    opacity: 0.90;
+    background-color: black;
+    opacity: 0.80;
 }
 .navstyle{
 }
@@ -60,7 +117,16 @@ nav {
     font-weight: 400;
     margin-right: 15px;
 }
-
+.nav_signin_btn {
+    color: #fff;
+    background-color: #FF5500;    
+    border-radius: 30px;
+    border-top-right-radius: 0;
+    transition: 0.5s;
+    padding: 15px;
+    font-size: 18px;
+    text-decoration: none;
+}
 .signin_btn {
     display: inline-block;
     text-decoration: none;
@@ -138,20 +204,29 @@ nav {
 /* Media Query for smaller screens */
 @media screen and (max-width: 768px) {
     .container {
-        padding: 10px 5%;
+        margin-top: 20%;
     }
-
+    .nav_signin_btn {
+        color: #fff;
+        background-color: #FF5500;    
+        border-radius: 30px;
+        border-top-right-radius: 0;
+        transition: 0.5s;
+        padding: 15px;
+        font-size: 18px;
+        text-decoration: none;
+    }
     .content {
         margin-top: 20px;
         text-align: center;
     }
 
     .content h1 {
-        font-size: 40px;
+        font-size: 50px;
     }
 
     .content p {
-        font-size: 16px;
+        font-size: 20px;
     }
     .logo .signin_btn
     {
@@ -177,7 +252,7 @@ nav {
 .aboutus {
     width: 100%;
     min-height: 100vh;
-    background-color:white;
+    background-color:transparent;
 }
 
 .containeraboutus {
@@ -230,13 +305,13 @@ nav {
 }
 
 .content-section .social i {
-    color: #a52aa5;
+    color: #120a12;
     font-size: 30px;
     padding: 0px 10px;
 }
 
 .content-section .social i:hover {
-    color: #333;
+    color: #FF5500;
 }
 
 @media screen and (max-width: 768px) {
@@ -265,7 +340,7 @@ nav {
 
 .feature {
     width: 100%;
-    background: #f1f1f1;
+    background: transparent;
     font-family: 'Montserrat', sans-serif;
     padding: 20px 5%;
     overflow: hidden;
@@ -274,13 +349,13 @@ nav {
 .feature h5 {
     margin-top: 20px;
     margin-left: 20px;
-    color: #f36;
+    color: #000000;
     letter-spacing: 1.5px;
-    font-size: 24px;
+    font-size: 40px;
 }
 
 .feature h1 {
-    font-size: 40px;
+    font-size: 25px;
     color: #3c3e41;
     margin-left: 20px;
     margin-top: 20px;
@@ -320,7 +395,7 @@ nav {
 }
 .feature .containerfeature .box .icons{
     font-size: 50px;
-    color: #f36;
+    color: #FF5500;
     margin-top: 10px;
   }
   .feature .containerfeature .box:hover .icons{
@@ -377,7 +452,7 @@ nav {
     align-items: center;
     display: flex;
     justify-content: center;
-    background-color:white;
+    background-color:transparent;
 }
 .slide_container{
     max-width: 1120px;
@@ -494,27 +569,32 @@ nav {
 }
 .contact_body
 {
-    background-color: #ffffff;
+    background-color: transparent;
     width: 100vw;
     height: 100vh;
     align-items: center;
     display: flex;
     overflow: hidden;
+    padding-bottom: 5px;
 }
 .contact_container{
+    border-radius: 35px;
     display: flex;
     align-items: center;
-    max-width: 800px;
+    width: 70%;
+    height: 100%;
     margin: 0 auto;
     color: #023047;
     padding: 48px 16px;
+    background-color: #000000;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 .contact_container .contact-left{
     background: #000000;
     padding: 32px 24px;
     border-radius: 5px;
-    box-shadow: 20px 20px 60px #bebebe,
-    -20px -20px 60px #ffffff;
+    border: 1px solid #FF5500;
 }
 .contact_container h2{
     margin-top: 8px;
@@ -547,6 +627,12 @@ nav {
 #contact_message {
     min-width: 70%;
 }
+.contact_right >* {
+    color: #FF5500;
+    align-self: center;
+    font-size: 20px;
+
+}
 .contact_container .contact-left .form_element label.active{
     background: #023047;
     transform: translate(8px,-16px);
@@ -571,13 +657,11 @@ nav {
 {
     transform: scale(1.05);
 }
-.contact_container .contact_right{
-    padding-left: 80px;
-}
+
 @media (max-width: 600px) {
     .contact_container{
-        flex-direction: column;
-        padding: 0 32px;
+        flex-direction: column-reverse;
+
     }
     .contact_container .contact-left{
         border-radius: 0;
@@ -587,7 +671,9 @@ nav {
     }
     .contact_container .contact_right{
         width: 100%;
-        padding: 48px 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }   
     .form_input {
         width: 95%;
